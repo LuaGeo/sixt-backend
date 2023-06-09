@@ -2,12 +2,17 @@ const express = require("express");
 const axios = require("axios");
 require("dotenv").config();
 const cors = require("cors");
+const mongoose = require("mongoose");
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 const apiKey = process.env.API_KEY;
+mongoose.connect(process.env.MONGODB_URI);
+
+const reservationRoutes = require("./routes/reservation");
+app.use(reservationRoutes);
 
 app.get("/locations", async (req, res) => {
   try {
