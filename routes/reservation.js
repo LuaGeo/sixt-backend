@@ -64,4 +64,13 @@ router.delete("/reservations/:id", async (req, res) => {
   }
 });
 
+router.get("/reservations", async (req, res) => {
+  try {
+    const reservations = await Reservation.find();
+    res.json(reservations);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to list reservations" });
+  }
+});
+
 module.exports = router;
