@@ -20,6 +20,7 @@ router.post("/reservations", async (req, res) => {
       reference: reference,
       startDate: reservationData.pickupDate,
       endDate: reservationData.returnDate,
+      location: reservationData.pickupStation,
       durationInDays: reservationData.rentalDurationInDays,
       clientDetails: {
         firstName: reservationData.clientDetails.firstName,
@@ -29,8 +30,11 @@ router.post("/reservations", async (req, res) => {
       totalCost: reservationData.totalPrice,
       vehicleDetails: {
         vehicleType: reservationData.vehicleDetails.vehicleType,
+        vehicleDescription: reservationData.vehicleDetails.vehicleDescription,
+
         vehiclePhoto: reservationData.vehicleDetails.vehiclePhoto,
         priceDetails: {
+          dayPrice: reservationData.vehicleDetails.priceDetails.dayPrice,
           fees: reservationData.vehicleDetails.priceDetails.fees,
           options: reservationData.vehicleDetails.priceDetails.options,
         },
