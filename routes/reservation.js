@@ -30,8 +30,7 @@ router.post("/reservations", async (req, res) => {
       totalCost: reservationData.totalPrice,
       vehicleDetails: {
         vehicleType: reservationData.vehicleDetails.vehicleType,
-        vehicleDescription: reservationData.vehicleDetails.vehicleDescription,
-
+        // vehicleDescription: reservationData.vehicleDetails.vehicleDescription,
         vehiclePhoto: reservationData.vehicleDetails.vehiclePhoto,
         priceDetails: {
           dayPrice: reservationData.vehicleDetails.priceDetails.dayPrice,
