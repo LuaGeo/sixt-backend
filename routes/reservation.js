@@ -20,7 +20,6 @@ router.post("/reservations", async (req, res) => {
       reference: reference,
       startDate: reservationData.pickupDate,
       endDate: reservationData.returnDate,
-      // location: reservationData.pickupStation,
       durationInDays: reservationData.rentalDurationInDays,
       clientDetails: {
         firstName: reservationData.clientDetails.firstName,

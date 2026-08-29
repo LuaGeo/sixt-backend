@@ -1,4 +1,4 @@
-// Function to generate the reservation reference
+// Function to generate the reservation's reference
 
 function generateReservationReference(date, name) {
   // Extract the required information from the date
